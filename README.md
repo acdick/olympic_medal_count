@@ -49,7 +49,7 @@ Three CSV files contain data about NOC countries and winners of the summer and w
 * Population
 * GDP per Capita
 
-31.2k summer and 5,770 medal winners:
+31.2k summer and 5,770 winter medal winners are separately recorded:
 
 * Year
 * City
@@ -84,7 +84,7 @@ Derived information for each year includes:
 * Total bronze medals won per team
 * Team win percentage of all medals available
 
-The cleaned Pandas DataFrame has 3,091 team records with 17 columns.
+The cleaned Pandas DataFrame has 3,091 team records with 15 data columns.
 
 ![DataFrame](/Plots/DataFrame.png)
 
@@ -162,4 +162,42 @@ Countries were transformed into categorical variables and those most highly corr
 
 ### Regression Model Fit
 
-![Multi_Linear_Regression](/Plots/Multi_Linear_Regression.png)
+** Initial Model: Total Athletes **
+
+An initial regression model examined the relationship between total medals won and total athletes by team.
+
+Total athletes by team explains 65.3% of the variance in total medal count.
+
+The coefficient of 0.1962 means that a team would be expected to win an additional medal for every five athletes.
+
+A model that uses all 10 dependent variables only explains 70.6% of the variance.
+
+![OLS Model 1](/Plots/OLS_Model_1.png)
+
+** Augmented Model: Total Athletes + (Sports Competed + Athletes per Sport) **
+
+An augmented regression model included the total number of sports competed and the number of athletes per sport (interaction).
+
+This model explained 70.7% of the variance in medal count, but athletes per sport contributed 0.6%.
+
+The negative correlation of -2.2385 means that a team would be expected to wins two fewer medals for every two athletes.
+
+Similarly, three fewer medals would be earned for every four athletes per sport.
+
+![OLS Model 2](/Plots/OLS_Model_2.png)
+
+** Final Model: Total Athletes + (Sports Competed + Athletes per Sport) + Specific Countries **
+
+The interaction of the number of athletes per sport was removed due to its low relevance in explaining the target variable.
+
+The final regression model includes individual countries as categorical variables.
+
+The countries most correlated with the target variable were investigated.
+
+Total athletes, sports competed and the 10 most correlated countries explain 79.2% of the variance.
+
+Including only the USA, USSR, East Germany, former USSR and France explains 79.0% of the variance.
+
+The USA would be expected to win 51 more medals than other countries, while the USSR would win 148 more.
+
+![OLS_Model_3](/Plots/OLS_Model_3.png)
