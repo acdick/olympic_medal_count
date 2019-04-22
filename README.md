@@ -11,7 +11,7 @@ https://www.kaggle.com/the-guardian/olympic-games
 
 # Exploratory Data Analysis
 
-![alt text](https://raw.githubusercontent.com/username/projectname/branch/path/to/img.png)
+![Dependent Variables](/Plots/Dependent_Variables_Pairplot.png)
 
 
 # Multi-Linear Regression
