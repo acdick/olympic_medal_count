@@ -197,7 +197,8 @@ The final regression model includes individual countries as categorical variable
 A linear regression model can be improved by investigating additional variables available in the dataset.
 
 * A categorical variable to differentiate models won in the summer or winter Olympics
-* A categorical variable to investigate the 
+* A categorical variable to investigate the effect of being a host country on winning medals
+* A categorical variable to divide years into eras (i.e. when females began to compete, end of the Cold War, etc.)
 
 ### Heteroscedasticity of Residuals
 
