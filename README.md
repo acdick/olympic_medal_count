@@ -2,11 +2,11 @@
 
 How many total medals will a country win at an Olympic Games?
 
-# Open Data Sources
+## Open Data Sources
 
 Data for this project was collected from two sources.
 
-## 120 Years of Olympic History: Athletes and Results
+### 120 Years of Olympic History: Athletes and Results
 
 https://www.kaggle.com/heesoo37/120-years-of-olympic-history-athletes-and-results
 
@@ -36,7 +36,7 @@ Two CSV files are available containing athlete results and Olympic country ident
 * region
 * notes
 
-## Olympic Sports and Medals, 1896-2014
+### Olympic Sports and Medals, 1896-2014
 
 https://www.kaggle.com/the-guardian/olympic-games
 
@@ -61,7 +61,7 @@ Three CSV files contain data about NOC countries and winners of the summer and w
 * Event
 * Medal
 
-## Collecting the Data into a Pandas DataFrame
+### Collecting the Data into a Pandas DataFrame
 
 The data sources were loaded into a SQL database, queried and joined to create a unified data set.
 
@@ -91,9 +91,13 @@ The cleaned Pandas DataFrame has 3,091 team records with 17 columns.
 ![Medals](/Plots/Medals.png)
 
 
-# Exploratory Data Analysis
+## Exploratory Data Analysis
 
-## Individual Competitors
+The data was explored by viewing the distributions of individual competitors, team compositions and sports participation.
+
+### Individual Competitors
+
+The physical attributes (age, height, weight) of individual competitors follows a normal distribution.
 
 ![Age](/Plots/Age.png)
 
@@ -101,22 +105,38 @@ The cleaned Pandas DataFrame has 3,091 team records with 17 columns.
 
 ![Weight](/Plots/Weight.png)
 
-## Team Composition
+### Team Composition
+
+The team compositions are skewed in terms of total athletes and female ratio.
+
+Most teams send few athletes to the Olympics, while only a few teams reach over 500 competitors.
 
 ![Total Athletes](/Plots/Total_Athletes.png)
 
+Most teams historically have a low ratio of females.
+
+In many of the initial years of the Olympics, only males competed.
+
 ![Female Ratio](/Plots/Female_Ratio.png)
 
-## Sports Participation
+### Sports Participation
+
+Most teams compete in only a few sports, consistent with few athletes per team.
 
 ![Sports Competed](/Plots/Sports_Competed.png)
+
+Some teams are able to compete in all sports offered at a given Olympics, but most participate in less than 25%.
 
 ![Sports Percentage](/Plots/Sports_Percentage.png)
 
 
-# Multi-Linear Regression
+## Multi-Linear Regression
 
-## Variable Correlations
+The raw and derived variables were correlated with each other to understand which variables would be best suited for regression.
+
+Three multi-linear regression models were developed to explain and predict the variance of the historic data.
+
+### Variable Correlations
 
 ![Variables Pairplot](/Plots/Variables_Pairplot.png)
 
@@ -126,6 +146,6 @@ The cleaned Pandas DataFrame has 3,091 team records with 17 columns.
 
 ![Categorical Country Correlation](/Plots/Categorical_Country_Correlation.png)
 
-## Regression Model Fit
+### Regression Model Fit
 
 ![Multi_Linear_Regression](/Plots/Multi_Linear_Regression.png)
