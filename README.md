@@ -144,11 +144,9 @@ The independent and dependent variables were plotted against each other in a pai
 
 The correlations between the variables were plotted in a correlation heatmap to identify correlated variables.
 
-Physical attributes of individual competitors (age, height, weight) has low correlation with total medals won.
-
-Similarly, year and female ratio has low correlation with total medals won.
-
-Finally, golds, silvers, bronzes and win percentage is highly correlated with total medals won, but cannot be included in a predictive model because they represent posterior knowledge.
+* Physical attributes of individual competitors (age, height, weight) has low correlation with total medals won.
+* Similarly, year and female ratio has low correlation with total medals won.
+* Finally, golds, silvers, bronzes and win percentage is highly correlated with total medals won, but cannot be included in a predictive model because they represent posterior knowledge.
 
 ![Correlation Heatmap](/Plots/Correlation_Heatmap.png)
 
@@ -162,42 +160,34 @@ Countries were transformed into categorical variables and those most highly corr
 
 ### Regression Model Fit
 
-** Initial Model: Total Athletes **
+**Initial Model: Total Athletes**
 
 An initial regression model examined the relationship between total medals won and total athletes by team.
 
-Total athletes by team explains 65.3% of the variance in total medal count.
-
-The coefficient of 0.1962 means that a team would be expected to win an additional medal for every five athletes.
-
-A model that uses all 10 dependent variables only explains 70.6% of the variance.
+* Total athletes by team explains 65.3% of the variance in total medal count.
+* The coefficient of 0.1962 means that a team would be expected to win an additional medal for every five athletes.
+* A model that uses all 10 dependent variables only explains 70.6% of the variance.
 
 ![OLS Model 1](/Plots/OLS_Model_1.png)
 
-** Augmented Model: Total Athletes + (Sports Competed + Athletes per Sport) **
+**Augmented Model: Total Athletes + (Sports Competed + Athletes per Sport)**
 
 An augmented regression model included the total number of sports competed and the number of athletes per sport (interaction).
 
-This model explained 70.7% of the variance in medal count, but athletes per sport contributed 0.6%.
-
-The negative correlation of -2.2385 means that a team would be expected to wins two fewer medals for every two athletes.
-
-Similarly, three fewer medals would be earned for every four athletes per sport.
+* This model explained 70.7% of the variance in medal count, but athletes per sport contributed 0.6%.
+* The negative correlation of -2.2385 means that a team would be expected to wins two fewer medals for every two athletes.
+* Similarly, three fewer medals would be earned for every four athletes per sport.
 
 ![OLS Model 2](/Plots/OLS_Model_2.png)
 
-** Final Model: Total Athletes + (Sports Competed + Athletes per Sport) + Specific Countries **
-
-The interaction of the number of athletes per sport was removed due to its low relevance in explaining the target variable.
+**Final Model: Total Athletes + (Sports Competed + Athletes per Sport) + Specific Countries**
 
 The final regression model includes individual countries as categorical variables.
 
-The countries most correlated with the target variable were investigated.
-
-Total athletes, sports competed and the 10 most correlated countries explain 79.2% of the variance.
-
-Including only the USA, USSR, East Germany, former USSR and France explains 79.0% of the variance.
-
-The USA would be expected to win 51 more medals than other countries, while the USSR would win 148 more.
+* The interaction of the number of athletes per sport was removed due to its low relevance in explaining the target variable.
+* The countries most correlated with the target variable were investigated.
+* Total athletes, sports competed and the 10 most correlated countries explain 79.2% of the variance.
+* Including only the USA, USSR, East Germany, former USSR and France explains 79.0% of the variance.
+* The USA would be expected to win 51 more medals than other countries, while the USSR would win 148 more.
 
 ![OLS_Model_3](/Plots/OLS_Model_3.png)
