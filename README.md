@@ -134,15 +134,29 @@ Some teams are able to compete in all sports offered at a given Olympics, but mo
 
 The raw and derived variables were correlated with each other to understand which variables would be best suited for regression.
 
-Three multi-linear regression models were developed to explain and predict the variance of the historic data.
+A multi-linear regression model was developed to explain and predict the variance of the historic data.
 
 ### Variable Correlations
 
+The independent and dependent variables were plotted against each other in a pairplot to visualize potential relationships.
+
 ![Variables Pairplot](/Plots/Variables_Pairplot.png)
+
+The correlations between the variables were plotted in a correlation heatmap to identify correlated variables.
+
+Physical attributes of individual competitors (age, height, weight) has low correlation with total medals won.
+
+Similarly, year and female ratio has low correlation with total medals won.
+
+Finally, golds, silvers, bronzes and win percentage is highly correlated with total medals won, but cannot be included in a predictive model because they represent posterior knowledge.
+
+![Correlation Heatmap](/Plots/Correlation_Heatmap.png)
+
+The independent variables that were ultimately used in the regression are total athletes, sports competed and athletes per sport.
 
 ![Dependent Variables Pairplot](/Plots/Dependent_Variables_Pairplot.png)
 
-![Correlation Heatmap](/Plots/Correlation_Heatmap.png)
+Countries were transformed into categorical variables and those most highly correlated with the target variable were investigated in the linear regression model.
 
 ![Categorical Country Correlation](/Plots/Categorical_Country_Correlation.png)
 
