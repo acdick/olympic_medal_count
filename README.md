@@ -191,3 +191,26 @@ The final regression model includes individual countries as categorical variable
 * The USA would be expected to win 51 more medals than other countries, while the USSR would win 148 more.
 
 ![OLS_Model_3](/Plots/OLS_Model_3.png)
+
+## Future Improvements
+
+A linear regression model can be improved by investigating additional variables available in the dataset.
+
+* A categorical variable to differentiate models won in the summer or winter Olympics
+* A categorical variable to investigate the 
+
+### Heteroscedasticity of Residuals
+
+The final regression model exhibits heteroscedasticity of residuals across total athletes, sports completed and specific countries.
+
+![Heteroscedasticity_Total_Athletes](/Plots/Heteroscedasticity_Total_Athletes.png)
+
+![Heteroscedasticity_Sports_Competed](/Plots/Heteroscedasticity_Sports_Competed.png)
+
+![Heteroscedasticity_USA](/Plots/Heteroscedasticity_USA.png)
+
+### Normality of Residuals
+
+The normality of the residuals of the multi-linear regression model should be improved.
+
+![QQ_Plot](/Plots/QQ_Plot.png)
