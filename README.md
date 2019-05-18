@@ -1,4 +1,4 @@
-# Olympic Medal Count
+# Multilinear Regression of Olympic Medal Count
 
 How many total medals will a country win at an Olympic Games?
 
